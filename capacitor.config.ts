@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'ionic-test-app',
+  appId: 'com.ionic.vuememories',
+  appName: 'Vue Memories',
   webDir: 'dist',
   server: {
     androidScheme: 'https'
