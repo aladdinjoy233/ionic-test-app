@@ -1,11 +1,11 @@
 <template>
-	<ion-item :router-link="`/memories/${memory.id}`">
+	<ion-item :router-link="`/patients/${patient.id}`">
 		<ion-thumbnail slot="start">
-			<ion-img :src="memory.image" :alt="memory.title"></ion-img>
+			<ion-img :src="patient.avatar || '/empty-user.jpg'"></ion-img>
 		</ion-thumbnail>
 
 		<ion-label>
-			{{ memory.title }}
+			{{ patient.nombre }} {{ patient.apellidos }}
 		</ion-label>
 	</ion-item>
 </template>
@@ -19,7 +19,7 @@ import {
 } from '@ionic/vue'
 
 export default {
-	props: ['memory'],
+	props: ['patient'],
 	components: {
 		IonItem,
 		IonImg,

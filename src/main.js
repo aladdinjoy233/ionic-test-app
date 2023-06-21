@@ -3,7 +3,8 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import BaseLayout from './components/base/BaseLayout.vue';
 import router from './router';
-import store from './store';
+import store from './stores';
+import { createPinia } from 'pinia'
 
 import { IonicVue } from '@ionic/vue';
 
@@ -27,13 +28,16 @@ import '@ionic/vue/css/display.css';
 import './theme/variables.css';
 import './theme/core.css';
 
+const pinia = createPinia();
+
 const app = createApp(App)
-  .use(IonicVue)
-  .use(router)
-  .use(store);
+	.use(IonicVue)
+	.use(router)
+	.use(pinia)
+	.use(store);
 
 app.component('base-layout', BaseLayout);
-  
+	
 router.isReady().then(() => {
-  app.mount('#app');
+	app.mount('#app');
 });
