@@ -17,8 +17,6 @@ import { add } from "ionicons/icons"
 import PatientsList from "../components/patients/PatientsList.vue"
 import { usePatientsStore } from "../stores/patientsStore"
 
-const store = usePatientsStore()
-
 export default {
 	components: {
 		IonButton,
@@ -28,17 +26,19 @@ export default {
 
 	data() {
 		return {
-			add // IonIcons
+			add, // IonIcons
+			store: usePatientsStore()
 		}	
 	},
 
 	computed: {
 		patients() {
-			return this.$store.getters.patients
+			return this.store.patients
 		}
 	},
+
 	mounted() {
-		this.$store.dispatch('fetchPatients')
+		this.store.fetchPatients()
 	}
 }
 </script>

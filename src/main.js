@@ -33,8 +33,8 @@ const pinia = createPinia();
 const app = createApp(App)
 	.use(IonicVue)
 	.use(router)
-	.use(pinia)
-	.use(store);
+	.use(store)
+	.use(pinia);
 
 app.component('base-layout', BaseLayout);
 	
