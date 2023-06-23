@@ -33,8 +33,9 @@ const pinia = createPinia();
 const app = createApp(App)
 	.use(IonicVue)
 	.use(router)
-	.use(store)
 	.use(pinia);
+
+app.config.globalProperties.$baseUrl = 'http://127.0.0.1/gestioo_core_medicina/debug_externo/';
 
 app.component('base-layout', BaseLayout);
 	

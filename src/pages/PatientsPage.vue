@@ -15,7 +15,7 @@
 import { IonButton, IonIcon } from "@ionic/vue"
 import { add } from "ionicons/icons"
 import PatientsList from "../components/patients/PatientsList.vue"
-import { usePatientsStore } from "../stores/patientsStore"
+import axios from 'axios'
 
 export default {
 	components: {
@@ -26,19 +26,31 @@ export default {
 
 	data() {
 		return {
-			add, // IonIcons
-			store: usePatientsStore()
+			patients: []
 		}	
 	},
 
-	computed: {
-		patients() {
-			return this.store.patients
+	methods: {
+		obtenerDatos() {
+			const fetchUrl = `${this.$baseUrl}get_pacientes`
+
+			axios.get(fetchUrl)
+				.then(res => {
+					this.patients = res.data.datos
+				})
+				.catch(err => console.log(err))
 		}
 	},
 
+	computed: {
+	},
+
+	setup() {
+		return { add }
+	},
+
 	mounted() {
-		this.store.fetchPatients()
+		this.obtenerDatos()
 	}
 }
 </script>
