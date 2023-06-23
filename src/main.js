@@ -7,6 +7,7 @@ import store from './stores';
 import { createPinia } from 'pinia'
 
 import { IonicVue } from '@ionic/vue';
+import { isPlatform } from '@ionic/vue';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/vue/css/core.css';
@@ -35,7 +36,11 @@ const app = createApp(App)
 	.use(router)
 	.use(pinia);
 
-app.config.globalProperties.$baseUrl = 'http://127.0.0.1/gestioo_core_medicina/debug_externo/';
+if (isPlatform('hybrid')) {
+	app.config.globalProperties.$baseUrl = 'http://192.168.1.241/gestioo_core_medicina/debug_externo/';
+} else {
+	app.config.globalProperties.$baseUrl = 'http://127.0.0.1/gestioo_core_medicina/debug_externo/';
+}
 
 app.component('base-layout', BaseLayout);
 	

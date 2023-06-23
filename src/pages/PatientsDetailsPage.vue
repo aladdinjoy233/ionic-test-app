@@ -52,11 +52,11 @@ export default {
 	computed: {
 	},
 
-	watch: {
-		$route(currentRoute) {
-			this.patientId = currentRoute.params.id
-		}
-	},
+	// watch: {
+	// 	$route(currentRoute) {
+	// 		this.patientId = currentRoute.params.id
+	// 	}
+	// },
 
 	mounted() {
 		this.obtenerDatos()
