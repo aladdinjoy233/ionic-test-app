@@ -37,7 +37,7 @@ const app = createApp(App)
 	.use(pinia);
 
 if (isPlatform('hybrid')) {
-	app.config.globalProperties.$baseUrl = 'http://192.168.1.241/gestioo_core_medicina/debug_externo/';
+	app.config.globalProperties.$baseUrl = 'http://192.168.23.182/gestioo_core_medicina/debug_externo/';
 } else {
 	app.config.globalProperties.$baseUrl = 'http://127.0.0.1/gestioo_core_medicina/debug_externo/';
 }

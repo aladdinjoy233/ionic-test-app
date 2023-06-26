@@ -5,7 +5,7 @@ const config: CapacitorConfig = {
   appName: 'Vue Memories',
   webDir: 'dist',
   server: {
-    androidScheme: 'https'
+    androidScheme: 'http'
   }
 };
 
