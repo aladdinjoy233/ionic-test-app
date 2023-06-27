@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1027056283254",
+    "project_id": "test-ionic-49d10",
+    "storage_bucket": "test-ionic-49d10.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1027056283254:android:8ab42d1753ad29e1203957",
+        "android_client_info": {
+          "package_name": "com.ionic.vuememories"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1027056283254-0r62543f59f0rf8ts9b9umoic2qerubj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbBtNCC3u3yRoIpltp7yU8_Z-RmcoPKMk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1027056283254-0r62543f59f0rf8ts9b9umoic2qerubj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -9,6 +9,21 @@ import { createPinia } from 'pinia'
 import { IonicVue } from '@ionic/vue';
 import { isPlatform } from '@ionic/vue';
 
+import { initializeApp } from 'firebase/app';
+import { getMessaging, getToken, onMessage } from '@firebase/messaging';
+
+import { PushNotifications } from '@capacitor/push-notifications';
+
+// const firebaseConfig = {
+// 	apiKey: "AIzaSyD0RTs6Ux09w8rkkw30pl65UZJFAPXxF5c",
+// 	authDomain: "test-ionic-49d10.firebaseapp.com",
+// 	projectId: "test-ionic-49d10",
+// 	storageBucket: "test-ionic-49d10.appspot.com",
+// 	messagingSenderId: "1027056283254",
+// 	appId: "1:1027056283254:web:2258d137881ccad0203957",
+// 	measurementId: "G-G7H6Q7LK0D"
+// }
+
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/vue/css/core.css';
 
@@ -37,7 +52,7 @@ const app = createApp(App)
 	.use(pinia);
 
 if (isPlatform('hybrid')) {
-	app.config.globalProperties.$baseUrl = 'http://192.168.23.182/gestioo_core_medicina/debug_externo/';
+	app.config.globalProperties.$baseUrl = 'http://192.168.1.241/gestioo_core_medicina/debug_externo/';
 } else {
 	app.config.globalProperties.$baseUrl = 'http://127.0.0.1/gestioo_core_medicina/debug_externo/';
 }
@@ -47,3 +62,22 @@ app.component('base-layout', BaseLayout);
 router.isReady().then(() => {
 	app.mount('#app');
 });
+
+// const firebaseApp = initializeApp(firebaseConfig);
+// const messaging = getMessaging(firebaseApp);
+// onMessage(messaging, payload => console.log('Message received. ', payload));
+
+// getToken(messaging, { vapidKey: 'BKzJxQxHsKMtW479TspE8naZDQ6XwudcOHB08vfAbQalbCYVsIVUclEFYVJbHmjJWTvo-BNsXvjiGbLFIXoZwps' })
+// 	.then((currentToken) => {
+// 		if (currentToken) {
+// 			console.log(currentToken);
+// 		} else {
+// 			console.log('No registration token available. Request permission to generate one.');
+// 		}
+// 	})
+// 	.catch(error => {
+// 		console.log('An error occurred while retrieving token. ', error);
+// 	})
+
+// Push Notifications
+PushNotifications.register();
